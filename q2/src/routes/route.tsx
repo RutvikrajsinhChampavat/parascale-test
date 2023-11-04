@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/main";
-import { Dashboard, Login } from "./lazyLoading";
+import { Dashboard, Login, ReservedBook } from "./lazyLoading";
 import AuthLayout from "../layouts/auth";
 
 const routes = createBrowserRouter([
@@ -11,6 +11,10 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Dashboard />,
+      },
+      {
+        path: "/reserved-books",
+        element: <ReservedBook />,
       },
     ],
   },

@@ -12,6 +12,12 @@ const Dashboard = () => {
     setData(res?.products);
   }, []);
 
+  const reserve = (book: any) => {
+    localStorage.setItem("reservedBook", JSON.stringify(book));
+
+    alert("Your order has been placed");
+  };
+
   const fetchBooks = (search: string) => {
     setTimeout(async () => {
       const res = await searchBooks(search);
@@ -47,7 +53,10 @@ const Dashboard = () => {
               <h6>{data?.description}</h6>
             </div>
 
-            <button className="bg-black text-white rounded-sm px-2 py-1 w-1/3">
+            <button
+              className="bg-black text-white rounded-sm px-2 py-1 w-1/3"
+              onClick={() => reserve(data)}
+            >
               Order
             </button>
           </div>
